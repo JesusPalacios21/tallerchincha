@@ -1,0 +1,39 @@
+<%- include('./partials/header') %>
+
+<div class="table-responsive">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>MARCA</th>
+        <th>MODELO</th>
+        <th>COLOR</th>
+        <th>COMBUSTIBLE</th>
+        <th>AÑO</th>
+        <th>CONDICION</th>
+        <th>OPERACIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% vehiculos.forEach(vehiculo => { %>
+       <tr>
+        <td><%= vehiculo.idvehiculo %></td>
+        <td><%= vehiculo.marca %></td>
+        <td><%= vehiculo.modelo %></td>
+        <td><%= vehiculo.color %></td>
+        <td><%= vehiculo.combustible %></td>
+        <td><%= vehiculo.afabricacion %></td>
+        <td><%= vehiculo.condicion %></td>
+        <td>
+          <a href="" class="btn btn-sm btn-info">Editar</a>
+          <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+        </td>
+       </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+</div>
+
+
+<%- include('./partials/footer') %>
