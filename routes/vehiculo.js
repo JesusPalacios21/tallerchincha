@@ -25,4 +25,12 @@ router.get('/', async (req,res) => {
   
 });
 
+router.get('/create', async(req,res) => {
+  try{
+    res.render('create')
+  }catch(error){
+    console.error
+  }
+})
+
 module.exports = router

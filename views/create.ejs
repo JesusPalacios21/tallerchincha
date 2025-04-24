@@ -1,0 +1,110 @@
+<%- include('./partials/header') %>
+
+<div class="container py-4">
+  <form action="/" id="formulario-registro" method="post" autocomplete="off">
+    <div class="card shadow-lg border-0 fade-in">
+      <div class="card-header bg-gradient bg-primary text-white fs-5 fw-bold">
+        <i class="bi bi-clipboard2-plus me-2"></i> Registro de Vehículo
+      </div>
+
+      <div class="card-body">
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select name="" id="" class="form-select" required>
+                <option value="" selected disabled>Seleccione</option>
+                <option value="1" selected>KIA</option>
+              </select>
+              <label>Marcas</label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" id="modelo" value="Sportage" name="modelo" class="form-control" placeholder="Modelo" required>
+              <label>Modelo</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <div class="form-floating">
+              <input type="text" id="color" value="blanco" name="color" class="form-control" placeholder="Color" required>
+              <label>Color</label>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-floating">
+              <select name="combustible" id="combustible" class="form-select" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Gasolina" selected>Gasolina</option>
+                <option value="GLP">GLP</option>
+                <option value="GNV">GNV</option>
+                <option value="Híbrido">Híbrido</option>
+              </select>
+              <label>Combustible</label>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-floating">
+              <input type="text" value="2025" minlength="4" maxlength="4" id="afabricacion" name="afabricacion" class="form-control" placeholder="Año de Fabricación" maxlength="4" required>
+              <label>Año de Fabricación</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-12">
+            <div class="form-floating">
+              <select name="" id="" class="form-select" required>
+                <option value="" disabled selected>Seleccione condición</option>
+                <option value="Nuevo" selected>Nuevo</option>
+                <option value="Seminuevo">Seminuevo</option>
+              </select>
+              <label>Condición</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer d-flex justify-content-end gap-2 bg-light">
+        <button type="submit" class="btn btn-sm btn-success px-3 shadow-sm">
+          <i class="bi bi-check-circle me-1"></i> Guardar
+        </button>
+        <a href="/" class="btn btn-sm btn-secondary px-3 shadow-sm">
+          <i class="bi bi-x-circle me-1"></i> Cancelar
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.querySelector("#formulario-registro")
+
+    formulario.addEventListener("submit", (event) => {
+      event.preventDefault()
+
+      Swal.fire({
+        title: 'Crud Node',
+        text: 'Este es un aviso',
+        icon: 'question',
+        footer: 'SENATI - Ingenieria de Software',
+        confirmButtonText: 'Aceptar',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if(result.isConfirmed){
+          console.log("Guardando datos...")
+        }
+      });
+    });
+  });
+</script>
+<%- include('partials/footer') %>
