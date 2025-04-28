@@ -25,3 +25,15 @@ INSERT INTO marcas (marca) VALUES
 INSERT INTO vehiculos (idmarca, modelo, color, combustible, afabricacion, condicion) VALUES
 	(1,'Sorento','negro','Gasolina','2023','Seminuevo'),
     (2,'Hilux','blanco','Diesel','2025','Nuevo');
+    
+    
+SELECT 
+	v.idvehiculo,
+    m.marca,
+    v.modelo,
+    v.color,
+    v.combustible,
+    v.afabricacion,
+    v.condicion
+	FROM vehiculos v
+    INNER JOIN marcas m ON v.idmarca = m.idmarca;

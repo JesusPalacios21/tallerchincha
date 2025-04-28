@@ -25,8 +25,8 @@
         <td><%= vehiculo.afabricacion %></td>
         <td><%= vehiculo.condicion %></td>
         <td>
-          <a href="" class="btn btn-sm btn-info">Editar</a>
-          <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+          <a href="/edit/<%= vehiculo.idvehiculo %>" class="btn btn-sm btn-info">Editar</a>
+          <a href="/delete/<%= vehiculo.idvehiculo %>" class="btn btn-sm btn-danger delete">Eliminar</a>
         </td>
        </tr>
       <% }) %>
@@ -35,5 +35,31 @@
 
 </div>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const enlacesEliminar = document.querySelectorAll(".delete")
+
+    enlacesEliminar.forEach(enlace => {
+      enlace.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        Swal.fire({
+        title: 'Vehiculos',
+        text: 'Está seguro de eliminar?',
+        icon: 'question',
+        footer: 'SENATI - Ingenieria de Software',
+        confirmButtonText: 'Aceptar',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if(result.isConfirmed){
+           window.location.href = event.target.getAttribute("href")
+          }
+        });//then()
+      });//addEventListener
+    });//forEach
+  }); //DOM
+</script>
 
 <%- include('./partials/footer') %>

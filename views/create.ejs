@@ -23,7 +23,7 @@
 
           <div class="col-md-6">
             <div class="form-floating">
-              <input type="text" id="modelo" value="Sportage" name="modelo" class="form-control" placeholder="Modelo" required>
+              <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" required>
               <label>Modelo</label>
             </div>
           </div>
@@ -32,7 +32,7 @@
         <div class="row g-3 mb-3">
           <div class="col-md-4">
             <div class="form-floating">
-              <input type="text" id="color" value="blanco" name="color" class="form-control" placeholder="Color" required>
+              <input type="text" id="color" name="color" class="form-control" placeholder="Color" required>
               <label>Color</label>
             </div>
           </div>
@@ -40,9 +40,9 @@
           <div class="col-md-4">
             <div class="form-floating">
               <select name="combustible" id="combustible" class="form-select" required>
-                <option value="" disabled selected>Seleccione</option>
+                <option value="">Seleccione</option>
                 <option value="Diesel">Diesel</option>
-                <option value="Gasolina" selected>Gasolina</option>
+                <option value="Gasolina">Gasolina</option>
                 <option value="GLP">GLP</option>
                 <option value="GNV">GNV</option>
                 <option value="Híbrido">Híbrido</option>
@@ -53,7 +53,7 @@
 
           <div class="col-md-4">
             <div class="form-floating">
-              <input type="text" value="2025" minlength="4" maxlength="4" id="afabricacion" name="afabricacion" class="form-control" placeholder="Año de Fabricación" maxlength="4" required>
+              <input type="text" minlength="4" maxlength="4" id="afabricacion" name="afabricacion" class="form-control" placeholder="Año de Fabricación" maxlength="4" required>
               <label>Año de Fabricación</label>
             </div>
           </div>
@@ -63,8 +63,8 @@
           <div class="col-md-12">
             <div class="form-floating">
               <select name="condicion" id="condicion" class="form-select" required>
-                <option value="" disabled selected>Seleccione condición</option>
-                <option value="Nuevo" selected>Nuevo</option>
+                <option value="">Seleccione condición</option>
+                <option value="Nuevo">Nuevo</option>
                 <option value="Seminuevo">Seminuevo</option>
               </select>
               <label>Condición</label>
